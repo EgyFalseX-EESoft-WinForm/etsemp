@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsQry" targetNamespace="http://tempuri.org/dsQry.xsd" xmlns:mstns="http://tempuri.org/dsQry.xsd" xmlns="http://tempuri.org/dsQry.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="EmployeesConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="EmployeesConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ETSEmployee.Properties.Settings.GlobalReference.Default.EmployeesConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vQry01TableAdapter" GeneratorDataComponentClassName="vQry01TableAdapter" Name="vQry01" UserDataComponentName="vQry01TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="EmployeesConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TBL_Emp.EmpID, TBL_Emp.EMPNAME, TBL_Emp.BIRTH_DATE, TBL_Emp.EmpNationalID, CD_Department.Department, TBL_Emp.MOBILE_NO, 
+                         CD_EmpJob.EmpJobName, CD_EmpState.EmpStateName, CD_Specialization.SpecializationName, CD_QualifiedPlace.QualifiedPlaceName, CDJobType.JobType, 
+                         CDQualification.qualName, CDDyana.dyana_name, CDnationalty.nationaltyname, TBL_Emp.Emp_Address, TBL_Emp.tameen_no, TBL_Emp.tameen_date1, 
+                         TBL_Emp.Moaahel_Date, TBL_Emp.Work_Start_Date, TBLGehawork.Gehawork, YEAR(GETDATE()) - YEAR(TBL_Emp.BIRTH_DATE) AS Age, 
+                         CDMarahel.marhala_name_e
+FROM            CDMarahel INNER JOIN
+                         TBLGehawork ON CDMarahel.marhala_code = TBLGehawork.marhalaid RIGHT OUTER JOIN
+                         TBL_Emp ON TBLGehawork.GehaworkId = TBL_Emp.marhala_code LEFT OUTER JOIN
+                         CDQualification ON TBL_Emp.qualId = CDQualification.qualId LEFT OUTER JOIN
+                         CDnationalty ON TBL_Emp.nationaltyId = CDnationalty.nationaltyId LEFT OUTER JOIN
+                         CDDyana ON TBL_Emp.dyana_code = CDDyana.dyana_code LEFT OUTER JOIN
+                         CD_EmpJob ON TBL_Emp.EmpJobId = CD_EmpJob.EmpJobId LEFT OUTER JOIN
+                         CD_Department ON TBL_Emp.DepartmentId = CD_Department.DepartmentId LEFT OUTER JOIN
+                         CD_EmpState ON TBL_Emp.JOB_STATUS_ID = CD_EmpState.EmpStateID LEFT OUTER JOIN
+                         CD_Specialization ON TBL_Emp.SpecializationId = CD_Specialization.SpecializationId LEFT OUTER JOIN
+                         CD_QualifiedPlace ON TBL_Emp.QualifiedPlaceId = CD_QualifiedPlace.QualifiedPlaceId LEFT OUTER JOIN
+                         CDJobType ON TBL_Emp.JobTypeId = CDJobType.JobTypeId</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="EmpID" DataSetColumn="EmpID" />
+              <Mapping SourceColumn="EMPNAME" DataSetColumn="EMPNAME" />
+              <Mapping SourceColumn="BIRTH_DATE" DataSetColumn="BIRTH_DATE" />
+              <Mapping SourceColumn="EmpNationalID" DataSetColumn="EmpNationalID" />
+              <Mapping SourceColumn="Department" DataSetColumn="Department" />
+              <Mapping SourceColumn="MOBILE_NO" DataSetColumn="MOBILE_NO" />
+              <Mapping SourceColumn="EmpJobName" DataSetColumn="EmpJobName" />
+              <Mapping SourceColumn="EmpStateName" DataSetColumn="EmpStateName" />
+              <Mapping SourceColumn="SpecializationName" DataSetColumn="SpecializationName" />
+              <Mapping SourceColumn="QualifiedPlaceName" DataSetColumn="QualifiedPlaceName" />
+              <Mapping SourceColumn="JobType" DataSetColumn="JobType" />
+              <Mapping SourceColumn="qualName" DataSetColumn="qualName" />
+              <Mapping SourceColumn="dyana_name" DataSetColumn="dyana_name" />
+              <Mapping SourceColumn="nationaltyname" DataSetColumn="nationaltyname" />
+              <Mapping SourceColumn="Emp_Address" DataSetColumn="Emp_Address" />
+              <Mapping SourceColumn="tameen_no" DataSetColumn="tameen_no" />
+              <Mapping SourceColumn="tameen_date1" DataSetColumn="tameen_date1" />
+              <Mapping SourceColumn="Moaahel_Date" DataSetColumn="Moaahel_Date" />
+              <Mapping SourceColumn="Work_Start_Date" DataSetColumn="Work_Start_Date" />
+              <Mapping SourceColumn="Gehawork" DataSetColumn="Gehawork" />
+              <Mapping SourceColumn="Age" DataSetColumn="Age" />
+              <Mapping SourceColumn="marhala_name_e" DataSetColumn="marhala_name_e" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources>
+          <DbSource ConnectionRef="EmployeesConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="GetServerDatetime" MethodsParameterType="CLR" Modifier="Public" Name="GetServerDatetime" QueryType="Scalar" ScalarCallRetval="System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="GetServerDatetime">
+            <SelectCommand>
+              <DbCommand CommandType="Text" ModifiedByUser="true">
+                <CommandText>SELECT GETDATE()</CommandText>
+                <Parameters />
+              </DbCommand>
+            </SelectCommand>
+          </DbSource>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsQry" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsQry" msprop:Generator_UserDSName="dsQry">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vQry01" msprop:Generator_TableClassName="vQry01DataTable" msprop:Generator_TableVarName="tablevQry01" msprop:Generator_TablePropName="vQry01" msprop:Generator_RowDeletingName="vQry01RowDeleting" msprop:Generator_RowChangingName="vQry01RowChanging" msprop:Generator_RowEvHandlerName="vQry01RowChangeEventHandler" msprop:Generator_RowDeletedName="vQry01RowDeleted" msprop:Generator_UserTableName="vQry01" msprop:Generator_RowChangedName="vQry01RowChanged" msprop:Generator_RowEvArgName="vQry01RowChangeEvent" msprop:Generator_RowClassName="vQry01Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EmpID" msprop:Generator_ColumnVarNameInTable="columnEmpID" msprop:Generator_ColumnPropNameInRow="EmpID" msprop:Generator_ColumnPropNameInTable="EmpIDColumn" msprop:Generator_UserColumnName="EmpID" type="xs:int" />
+              <xs:element name="EMPNAME" msprop:Generator_ColumnVarNameInTable="columnEMPNAME" msprop:Generator_ColumnPropNameInRow="EMPNAME" msprop:Generator_ColumnPropNameInTable="EMPNAMEColumn" msprop:Generator_UserColumnName="EMPNAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BIRTH_DATE" msprop:Generator_ColumnVarNameInTable="columnBIRTH_DATE" msprop:Generator_ColumnPropNameInRow="BIRTH_DATE" msprop:Generator_ColumnPropNameInTable="BIRTH_DATEColumn" msprop:Generator_UserColumnName="BIRTH_DATE" type="xs:dateTime" />
+              <xs:element name="EmpNationalID" msprop:Generator_ColumnVarNameInTable="columnEmpNationalID" msprop:Generator_ColumnPropNameInRow="EmpNationalID" msprop:Generator_ColumnPropNameInTable="EmpNationalIDColumn" msprop:Generator_UserColumnName="EmpNationalID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="14" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Department" msprop:Generator_ColumnVarNameInTable="columnDepartment" msprop:Generator_ColumnPropNameInRow="Department" msprop:Generator_ColumnPropNameInTable="DepartmentColumn" msprop:Generator_UserColumnName="Department" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MOBILE_NO" msprop:Generator_ColumnVarNameInTable="columnMOBILE_NO" msprop:Generator_ColumnPropNameInRow="MOBILE_NO" msprop:Generator_ColumnPropNameInTable="MOBILE_NOColumn" msprop:Generator_UserColumnName="MOBILE_NO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmpJobName" msprop:Generator_ColumnVarNameInTable="columnEmpJobName" msprop:Generator_ColumnPropNameInRow="EmpJobName" msprop:Generator_ColumnPropNameInTable="EmpJobNameColumn" msprop:Generator_UserColumnName="EmpJobName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmpStateName" msprop:Generator_ColumnVarNameInTable="columnEmpStateName" msprop:Generator_ColumnPropNameInRow="EmpStateName" msprop:Generator_ColumnPropNameInTable="EmpStateNameColumn" msprop:Generator_UserColumnName="EmpStateName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SpecializationName" msprop:Generator_ColumnVarNameInTable="columnSpecializationName" msprop:Generator_ColumnPropNameInRow="SpecializationName" msprop:Generator_ColumnPropNameInTable="SpecializationNameColumn" msprop:Generator_UserColumnName="SpecializationName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="QualifiedPlaceName" msprop:Generator_ColumnVarNameInTable="columnQualifiedPlaceName" msprop:Generator_ColumnPropNameInRow="QualifiedPlaceName" msprop:Generator_ColumnPropNameInTable="QualifiedPlaceNameColumn" msprop:Generator_UserColumnName="QualifiedPlaceName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="JobType" msprop:Generator_ColumnVarNameInTable="columnJobType" msprop:Generator_ColumnPropNameInRow="JobType" msprop:Generator_ColumnPropNameInTable="JobTypeColumn" msprop:Generator_UserColumnName="JobType" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="qualName" msprop:Generator_ColumnVarNameInTable="columnqualName" msprop:Generator_ColumnPropNameInRow="qualName" msprop:Generator_ColumnPropNameInTable="qualNameColumn" msprop:Generator_UserColumnName="qualName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dyana_name" msprop:Generator_ColumnVarNameInTable="columndyana_name" msprop:Generator_ColumnPropNameInRow="dyana_name" msprop:Generator_ColumnPropNameInTable="dyana_nameColumn" msprop:Generator_UserColumnName="dyana_name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nationaltyname" msprop:Generator_ColumnVarNameInTable="columnnationaltyname" msprop:Generator_ColumnPropNameInRow="nationaltyname" msprop:Generator_ColumnPropNameInTable="nationaltynameColumn" msprop:Generator_UserColumnName="nationaltyname" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Emp_Address" msprop:Generator_ColumnVarNameInTable="columnEmp_Address" msprop:Generator_ColumnPropNameInRow="Emp_Address" msprop:Generator_ColumnPropNameInTable="Emp_AddressColumn" msprop:Generator_UserColumnName="Emp_Address" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tameen_no" msprop:Generator_ColumnVarNameInTable="columntameen_no" msprop:Generator_ColumnPropNameInRow="tameen_no" msprop:Generator_ColumnPropNameInTable="tameen_noColumn" msprop:Generator_UserColumnName="tameen_no" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tameen_date1" msprop:Generator_ColumnVarNameInTable="columntameen_date1" msprop:Generator_ColumnPropNameInRow="tameen_date1" msprop:Generator_ColumnPropNameInTable="tameen_date1Column" msprop:Generator_UserColumnName="tameen_date1" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Moaahel_Date" msprop:Generator_ColumnVarNameInTable="columnMoaahel_Date" msprop:Generator_ColumnPropNameInRow="Moaahel_Date" msprop:Generator_ColumnPropNameInTable="Moaahel_DateColumn" msprop:Generator_UserColumnName="Moaahel_Date" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Work_Start_Date" msprop:Generator_ColumnVarNameInTable="columnWork_Start_Date" msprop:Generator_ColumnPropNameInRow="Work_Start_Date" msprop:Generator_ColumnPropNameInTable="Work_Start_DateColumn" msprop:Generator_UserColumnName="Work_Start_Date" type="xs:dateTime" />
+              <xs:element name="Gehawork" msprop:Generator_ColumnVarNameInTable="columnGehawork" msprop:Generator_ColumnPropNameInRow="Gehawork" msprop:Generator_ColumnPropNameInTable="GehaworkColumn" msprop:Generator_UserColumnName="Gehawork" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Age" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAge" msprop:Generator_ColumnPropNameInRow="Age" msprop:Generator_ColumnPropNameInTable="AgeColumn" msprop:Generator_UserColumnName="Age" type="xs:int" minOccurs="0" />
+              <xs:element name="marhala_name_e" msprop:Generator_ColumnVarNameInTable="columnmarhala_name_e" msprop:Generator_ColumnPropNameInRow="marhala_name_e" msprop:Generator_ColumnPropNameInTable="marhala_name_eColumn" msprop:Generator_UserColumnName="marhala_name_e" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vQry01" />
+      <xs:field xpath="mstns:EmpID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

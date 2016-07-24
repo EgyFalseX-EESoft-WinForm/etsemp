@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Employees" Class="dsLinqQryDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=FalseX-PC;Initial Catalog=Employees;Persist Security Info=True;User ID=sa" SettingsObjectName="ETSEmployee.Properties.Settings" SettingsPropertyName="EmployeesConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.vQry02" Member="vQry02s">
+    <Type Name="vQry02">
+      <Column Name="GehaworkId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Gehawork" Type="System.String" DbType="NVarChar(75) NOT NULL" CanBeNull="false" />
+      <Column Name="MaleCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FemaleCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vQry03" Member="vQry03s">
+    <Type Name="vQry03">
+      <Column Name="GehaworkId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Gehawork" Type="System.String" DbType="NVarChar(75) NOT NULL" CanBeNull="false" />
+      <Column Name="EmpJobId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="EmpJobName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[0_20]" Member="_0_20" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[20_40]" Member="_20_40" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[40_60]" Member="_40_60" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[&gt;_60]" Member="__60" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vQry04" Member="vQry04s">
+    <Type Name="vQry04">
+      <Column Name="GehaworkId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Gehawork" Type="System.String" DbType="NVarChar(75) NOT NULL" CanBeNull="false" />
+      <Column Name="EmpJobId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EmpJobName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EmpID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="EMPNAME" Type="System.String" DbType="NVarChar(75) NOT NULL" CanBeNull="false" />
+      <Column Name="BIRTH_DATE" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Age" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RetirementDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBLManagers" Member="TBLManagers">
+    <Type Name="TBLManager">
+      <Column Name="EmpID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GehaworkId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="datefrom" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="dateto" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="mobile1" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="mobile12" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="telwork" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="telhome" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="remarks" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="userin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="datein" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="TBL_Emp_TBLManager" Member="TBL_Emp" ThisKey="EmpID" OtherKey="EmpID" Type="TBL_Emp" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="User_TBLManager" Member="User" ThisKey="userin" OtherKey="UserID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_Emp" Member="TBL_Emps">
+    <Type Name="TBL_Emp">
+      <Column Name="EmpID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EMPNAME" Type="System.String" DbType="NVarChar(75) NOT NULL" CanBeNull="false" />
+      <Column Name="GehaworkId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="marhala_code" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="EmpNationalID" Type="System.String" DbType="NVarChar(14) NOT NULL" CanBeNull="false" />
+      <Column Name="BIRTH_DATE" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="BIRTH_GOV" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="BIRTH_PLACE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GENDER_ID" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="EMP_FIRST_NAME" Type="System.String" DbType="NVarChar(75)" CanBeNull="true" />
+      <Column Name="EMP_FATHER_NAME" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="EMP_FAM_NAME" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="EMP_FOURTH_NAME" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="nationaltyId" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="dyana_code" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="MaritalStatusId" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="SubjectId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="DepartmentId" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="EmpJobId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="JobkaderId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="JOB_STATUS_ID" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="JobTypeId" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Emp_Address" Type="System.String" DbType="NVarChar(60)" CanBeNull="true" />
+      <Column Name="PHONE_NO" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="MOBILE_NO" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="Work_Start_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="End_Work_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="qualId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SpecializationId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QualifiedPlaceId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Moaahel_Date" Type="System.String" DbType="NVarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="tagned_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tameen_no" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="tameen_date1" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="tameen_date2" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="betaka_tameen" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="noview" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="orderreport" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EMPPIC" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="userin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="datein" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="JobDescriptionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codemortabat" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="eschoolcode" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Association Name="TBL_Emp_TBLManager" Member="TBLManagers" ThisKey="EmpID" OtherKey="EmpID" Type="TBLManager" />
+      <Association Name="TBLGehawork_TBL_Emp" Member="TBLGehawork" ThisKey="GehaworkId" OtherKey="GehaworkId" Type="TBLGehawork" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBLGehawork" Member="TBLGehaworks">
+    <Type Name="TBLGehawork">
+      <Column Name="GehaworkId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Gehawork" Type="System.String" DbType="NVarChar(75) NOT NULL" CanBeNull="false" />
+      <Column Name="GehaworktypeId" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="marhalaid" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Association Name="TBLGehawork_TBL_Emp" Member="TBL_Emps" ThisKey="GehaworkId" OtherKey="GehaworkId" Type="TBL_Emp" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UserPass" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LastActivityDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="User_TBLManager" Member="TBLManagers" ThisKey="UserID" OtherKey="userin" Type="TBLManager" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vtbl_emppriod" Member="vtbl_emppriods">
+    <Type Name="vtbl_emppriod">
+      <Column Name="empid" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="priodid" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="dayid" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="dayname" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="priod" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="EMPNAME" Type="System.String" DbType="NVarChar(75) NOT NULL" CanBeNull="false" />
+      <Column Name="Gehawork" Type="System.String" DbType="NVarChar(75) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.cd_day" Member="cd_days">
+    <Type Name="cd_day">
+      <Column Name="dayid" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="dayname" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vtblmortabat" Member="vtblmortabats">
+    <Type Name="vtblmortabat">
+      <Column Name="mortabtid" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AsaseSalaryId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="month_code" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="EmpID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="asasywithout" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="asasy" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="elawajan" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="elawajulay" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="tamin26" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="tamin24" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="elawa1" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="elawa2" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="elawa3" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="elawa4" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="elawa5" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="egtmaia" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="edafia" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="menha" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="hadadna" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="hafez" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="khpra" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="est1" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="est2" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="est3" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="est4" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="est5" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="sumesthkak" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="estamin26" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="estamin24" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="estamin14" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="estamin11" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="solaf" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="absent" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="gaza" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="esttkta1" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="esttkta2" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="esttkta3" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="esttkta4" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="sumesetktaa" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="safy" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="month_name" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="EMPNAME" Type="System.String" DbType="NVarChar(75) NOT NULL" CanBeNull="false" />
+      <Column Name="AsaseSalary" Type="System.String" DbType="NVarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="userin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="datein" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="GehaworkId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Gehawork" Type="System.String" DbType="NVarChar(75) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vtblbadalat" Member="vtblbadalats">
+    <Type Name="vtblbadalat">
+      <Column Name="badalid" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AsaseSalaryId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="month_code" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="EmpID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fatra1" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="fatra2" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="badalgohood" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="fark" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="years" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="hafez" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="sumesthkakbadal" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="days" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="absent" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="gazaa" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="soolaf" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="sumesetktaa" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="est1" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="est2" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="esttkta1" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="esttkta2" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="safy" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="userin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="datein" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="AsaseSalary" Type="System.String" DbType="NVarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="EMPNAME" Type="System.String" DbType="NVarChar(75) NOT NULL" CanBeNull="false" />
+      <Column Name="month_name" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="GehaworkId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Gehawork" Type="System.String" DbType="NVarChar(75) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>
